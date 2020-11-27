@@ -1,1 +1,31 @@
-<p>user-search works!</p>
+<div class="row mb-3">
+    <div class="col-8">
+        <input type="text" #key class="form-control shadow" placeholder="Buscar por ID">
+    </div>
+    <div class="col-4">
+        <button class="btn btn-success btn-block" (click)="search(key.value)">Buscar</button>
+    </div>
+</div>
+
+<div class="alert alert-info" role="alert" *ngIf="searching === 1">
+El usuario {{nameAlert}} ha sido eliminado con exito.
+</div>
+
+<div class="card-columns mt-0" *ngIf="searching === 2">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img [src]="results.avatar" class="card-img" alt="Avatar user">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Name: {{results.first_name}} {{results.last_name}}</h5>
+                    <hr>
+                    <p class="card-text">E-Mail: {{results.email}}</p>
+                    <p class="card-text">ID: {{results.id}}</p>
+                    <button class="btn btn-outline-danger btn-block" (click)="delete(results.id, results.name)">Borrar usuario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

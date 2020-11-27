@@ -12,7 +12,7 @@ import { UserSearchComponent } from './components/user-search/user-search.compon
 export const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'userList', component: UserListComponent },
-    { path: 'user/:id', component: UserSearchComponent },
+    { path: 'user', component: UserSearchComponent },
     { path: 'addUser', component: AddUserComponent },
     { path: 'delUser', component: DeleteUserComponent },
     { path: '**', pathMatch: 'full', component: HomeComponent }

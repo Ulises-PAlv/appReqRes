@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
   import { ROUTES } from './app.routes';
 import { CardUsrComponent } from './components/shared/card-usr/card-usr.component';
 
+// ?? Reactive forms
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +37,7 @@ import { CardUsrComponent } from './components/shared/card-usr/card-usr.componen
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],
