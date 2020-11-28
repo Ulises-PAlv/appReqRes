@@ -13,7 +13,6 @@ import { ValidateService } from 'src/app/services/validateForm/validate.service'
 export class AddUserComponent implements OnInit {
 
   form: FormGroup;
-  newUserInfo: any = [{name: ''}, {email: ''}];
   userData: any;
 
   // Getters
@@ -68,12 +67,12 @@ export class AddUserComponent implements OnInit {
     console.log(this.form);
   }
 
-  saveDataUser(name, email) {
-    this.newUserInfo.name = name;
-    this.newUserInfo.email = email;
+  saveDataUser() {
+    let newUserInfo = {"name": this.form.get('name').value, "email": this.form.get('email').value};
 
-    this.userData = this.userService.postUser(this.newUserInfo).subscribe();
-    console.log(this.userData);
+    this.userService.postUser(newUserInfo).subscribe((data: any) => {
+      console.log(data);
+    });
   }
 
 }
